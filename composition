@@ -1,0 +1,6 @@
+(define(o . xs)
+ (cond ((null? xs) (lambda (x) x))
+    (else (lambda (x) ((car xs) ((apply o (cdr xs)) x))))))
+(define (f x) (+ x 2))
+(define (g x) (* x 3))
+(define (h x) (- x))
